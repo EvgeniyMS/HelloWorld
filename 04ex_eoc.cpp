@@ -12,23 +12,25 @@ int main()
     SetConsoleCP(1251);
 
     cout << "¬ведите два целых числа или '|' дл€ завершени€" << endl; 
-    vector<int> numbers = {1,2};
+    vector<int> numbers = {0,0};
     bool proceed = true;
     while (proceed)
     {
+        char smbl;
         cout << ": ";
-        cin >> numbers[0];
-        cout << numbers[0];
-        cin >> numbers[0];
+        cin >> smbl;
+        numbers[0] = smbl;
+        cout << numbers[0] << " and " << numbers[1] << endl;
         if (numbers[0] == '|')
             proceed = false; // end of while
         else {
-            cout << endl << ": ";
-            cin >> numbers[1];
-            if (numbers[1] == 0)
+            cout << ": ";
+            cin >> smbl;
+            numbers[1] = smbl;
+            if (numbers[1] == '|')
                 proceed = false; // end of while
                 else {
-                    cout << endl << numbers[0] << " and " << numbers[1] << endl;
+                    cout << numbers[0] << " and " << numbers[1] << endl;
                 }
         }    
     }
